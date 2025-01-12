@@ -443,3 +443,5 @@ setTimeout(function() {
         alert("¡Buena suerte!");
     });
 }, 5000);  // Espera 5000 milisegundos (5 segundos)
+
+
