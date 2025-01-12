@@ -1,31 +1,41 @@
-canvas {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-p {
-	margin: 0 0;
-	position: absolute;
-	font: 16px Verdana;
-	color: #eee;
-	height: 25px;
-	top: calc( 100vh - 30px );
-	text-shadow: 0 0 2px white;
-}
-p a {
-	text-decoration: none;
-	color: #aaa;
-}
-span {
-	font-size: 11px;
-}
-p > a:first-of-type {
-	font-size: 20px;
-}
+/* Estilos generales */
 body {
-	overflow: hidden;
+    overflow: hidden;
+    margin: 0;
 }
 
+/* Canvas */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Estilo de los párrafos */
+p {
+    margin: 0 0;
+    position: absolute;
+    font: 16px Verdana;
+    color: #eee;
+    height: 25px;
+    top: calc( 100vh - 30px );
+    text-shadow: 0 0 2px white;
+}
+
+p a {
+    text-decoration: none;
+    color: #aaa;
+}
+
+span {
+    font-size: 11px;
+}
+
+p > a:first-of-type {
+    font-size: 20px;
+}
+
+/* Botón */
 button {
     position: absolute;
     top: 60%; 
@@ -51,6 +61,7 @@ button:active {
     transform: translate(-50%, -50%) scale(1);
 }
 
+/* Contenedor del formulario */
 #birthdayInputContainer {
     position: absolute;
     top: 70%; 
@@ -65,7 +76,7 @@ button:active {
     display: none;
 }
 
-
+/* Input y botón de enviar */
 #birthdayInput {
     padding: 10px;
     margin: 10px 0;
@@ -88,8 +99,7 @@ button:active {
     background-color: #8a3442;
 }
 
-
-/* Estilo para el fondo oscuro del modal */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -97,13 +107,12 @@ button:active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);  /* Fondo oscuro */
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Asegura que el modal esté encima de todo */
+    z-index: 1000;
 }
 
-/* Estilo del contenido del modal */
 .modal-content {
     background-color: #fff;
     padding: 20px;
@@ -112,7 +121,7 @@ button:active {
     width: 300px;
 }
 
-/* Estilo de los botones */
+/* Botón dentro del modal */
 .modal-content button {
     padding: 10px 20px;
     margin: 10px;
@@ -128,3 +137,47 @@ button:active {
     background-color: #45a049;
 }
 
+/* Media Queries para pantallas pequeñas (Móviles) */
+@media (max-width: 768px) {
+    /* Ajustar el tamaño del contenedor del formulario en pantallas más pequeñas */
+    #birthdayInputContainer {
+        width: 80%; /* Ajustar a un 80% del ancho de la pantalla */
+        top: 60%; /* Mover un poco más arriba en dispositivos móviles */
+    }
+
+    /* Ajustar el tamaño del botón en pantallas más pequeñas */
+    button {
+        font-size: 16px; /* Reducir tamaño de fuente */
+        padding: 12px 24px; /* Reducir el padding */
+    }
+
+    /* Ajustar los elementos en el canvas para que no se desborden */
+    canvas {
+        width: 100%; /* Canvas en el 100% del ancho */
+        height: auto; /* Mantener la proporción */
+    }
+    
+    /* Ajuste de texto en los párrafos */
+    p {
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+    }
+}
+
+/* Media Queries para pantallas muy pequeñas (dispositivos móviles) */
+@media (max-width: 480px) {
+    /* Ajustar el tamaño de las entradas y los botones */
+    #birthdayInput {
+        font-size: 14px; /* Reducir tamaño de texto */
+    }
+
+    #submitBirthday {
+        padding: 8px 20px; /* Reducir el padding */
+        font-size: 14px; /* Reducir tamaño de la fuente */
+    }
+
+    /* Ajustar la posición de los elementos */
+    #birthdayInputContainer {
+        width: 90%; /* Usar el 90% del ancho en pantallas muy pequeñas */
+        top: 55%; /* Subir el contenedor en pantallas más pequeñas */
+    }
+}
